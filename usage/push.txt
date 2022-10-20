@@ -1,0 +1,85 @@
+GIT
+echo "# BLOG_" >> README.md
+git init
+git add README.md
+git add -A
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/d10000usd/BLOG_.git
+git push -u origin main
+git status
+git remote -v  
+
+
+
+
+> git add -A
+> git commit -m "first commit"
+[main c31d66c] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 m.py
+패치한 후 커밋 하면 다중 발생
+> git commit -m "first commit"
+[main 9709144] first commit
+ 9 files changed, 167 insertions(+), 13 deletions(-)
+ create mode 100644 branch.txt
+ create mode 100644 fetch.txt
+ delete mode 100644 j.py
+ delete mode 100644 m.py
+ delete mode 100644 s.py
+ delete mode 100644 usage.txt
+
+ 
+> git push -f origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 264 bytes | 264.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/d10000usd/BLOG_.git
+   618d7b6..c31d66c  main -> main
+ ~/WORKSPACE/GITSource/BLOG_  main         con py 
+> 
+
+
+
+$ git checkout issue3
+Switched to branch 'issue3'
+
+
+
+리모트 저장소 삭제
+> git remote add origin https://github.com/d10000usd/Tradingview.git
+error: remote origin already exists.
+> git remote add origin_1 https://github.com/d10000usd/Tradingview.git
+> git status
+On branch main_1
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+> git remote -v
+origin  https://github.com/bergusman/tradingview-udf-binance-node.git (fetch)
+origin  https://github.com/bergusman/tradingview-udf-binance-node.git (push)
+origin_1        https://github.com/d10000usd/Tradingview.git (fetch)
+origin_1        https://github.com/d10000usd/Tradingview.git (push)
+> git remote rm origin
+> git remote -v
+origin_1        https://github.com/d10000usd/Tradingview.git (fetch)
+origin_1        https://github.com/d10000usd/Tradingview.git (push)
+
+
+브랜치 안될때
+> git branch -M main
+> git remote add origin https://github.com/d10000usd/BLOG_.git
+error: remote origin already exists.
+> git push -u origin main
+remote: Permission to bergusman/tradingview-udf-binance-node.git denied to d10000usd.
+fatal: unable to access 'https://github.com/bergusman/tradingview-udf-binance-node.git/': The requested URL returned error: 403
+>  git branch -M main_1
+> git status
+On branch main_1
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)

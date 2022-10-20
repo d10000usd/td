@@ -1,0 +1,77 @@
+git fetch 원격저장소 이름
+
+fetch 풀하기 전에 변경 사항이 있는지만 체크,
+> git fetch origin
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 684 bytes | 228.00 KiB/s, done.
+From https://github.com/d10000usd/BLOG_
+   afe5254..0a973cf  main       -> origin/main
+
+
+
+
+
+
+
+fetch를 하고 나면 해당 브랜치로 checkout 해주어함
+fetch를 하고 나면 해당 브랜치로 checkout 해주어함
+> git branch -r
+  origin/HEAD -> origin/main
+  origin/main
+
+
+git checkout origin/master
+> git checkout origin/master
+error: pathspec 'origin/master' did not match any file(s) known to git
+
+체크아웃 하면 소스와 깃허브 변경상황을 알려줌
+>git checkout origin/main
+M       README.md
+D       j.py
+D       m.py
+M       pull.txt
+M       push.txt
+D       s.py
+D       usage.txt
+Note: switching to 'origin/main'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 0a973cf Create example-fetch.txt
+
+>git log
+commit afe52547e8f8fc55ba9cf5c72a243fb858998073 (HEAD -> main)
+
+Date:   Fri Sep 16 10:37:58 2022 +0900
+
+    first commit
+
+commit d6309fc07812fefda9739907c56a38517f5feea6
+
+Date:   Fri Sep 16 10:36:25 2022 +0900
+
+    commit and push
+
+!!!!! endof 
+q
+
+
+txt 파일을 열어보면 원격저장소에서 수정한 내용이 추가되었어요.
+fetch로 가져온 내용은 로컬디렉토리엔 저장되지 않고 브랜치로 checkout 하여
+변경된 내용들을 확인만 하는것 입니다.

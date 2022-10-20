@@ -1,0 +1,54 @@
+# 도커는 명령어로 런하기 보다는 툴을 써서 사용하는것이 좋음
+#
+# docker --version
+
+# cd frontend && sudo docker run -it node
+
+# docker-compose up -d
+
+# docker images
+
+# docker ps
+
+# docker ps -a
+
+
+
+# 전체 빌드
+docker compose up
+
+
+
+# database
+#
+# 이미지 빌드 명령어 (현 파일과 같은 디렉토리에서)
+# docker build -t {이미지명} .
+# docker build -t u22zsh:22 -< dockerfile
+# 실행 명령어 (터미널에 로그 찍히는 것 보기)
+# docker run --name {컨테이너명} -p 3306:3306 {이미지명}
+
+# 실행 명령어 (데몬으로 실행)
+# docker run --name {컨테이너명} -p 3306:3306 -d {이미지명}
+
+
+
+
+
+#
+# backend 
+# 이미지 생성 명령어 (현 파일과 같은 디렉토리에서)
+# docker build -t {이미지명} .
+
+# 컨테이너 생성 & 실행 명령어
+# docker run --name {컨테이너명} -v $(pwd):/usr/src/app -p 5555:5555 {이미지명}
+
+
+
+#
+# frontend
+
+# 이미지 생성 명령어 (현 파일과 같은 디렉토리에서)
+# docker build -t {이미지명} .
+
+# 컨테이너 생성 & 실행 명령어
+# docker run --name {컨테이너명} -v $(pwd):/home/node/app -p 8080:8080 {이미지명}

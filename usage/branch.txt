@@ -1,0 +1,45 @@
+git push <저장소명> <브랜치명>
+git push origin main
+git pull origin main
+> git branch
+* main
+
+#브랜치 생성
+> git branch main-one
+> git branch
+* main
+  main-one
+
+#브랜치 삭제
+git branch -d main-one
+> git branch -d main-one
+Deleted branch main-one (was afe5254).
+> git branch
+* main
+
+$ git checkout main-one
+Switched to branch 'main-one'
+
+Deleted branch issue1 (was b2b23c4).
+
+
+
+
+
+아래처럼 될경우 main 으로 브랜치 변경
+ ~/WORKSPACE/GITSource/BLOG_  @0a973cf5 !7 ?2                                      con p
+ ~/WORKSPACE/GITSource/BLOG_  @0a973cf5 !7 ?2                                 
+ ~/WORKSPACE/GITSource/BLOG_  @0a973cf5 !7 ?2                 
+> git checkout main
+M       README.md
+D       j.py
+D       m.py
+M       pull.txt
+M       push.txt
+D       s.py
+D       usage.txt
+Previous HEAD position was 0a973cf Create example-fetch.txt
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+ ~/WORKSPACE/GITSource/BLOG_  main <1 !7 ?2 
